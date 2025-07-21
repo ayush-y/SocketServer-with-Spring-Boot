@@ -1,5 +1,4 @@
-package org.example.ubersocketservice.controller;
-
+package org.example.ubersocketservice.dto;
 
 import lombok.*;
 
@@ -8,11 +7,11 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChatResponse {
+public class ChatRequest {
 
     private String name;
 
     private String message;
 
-    private String timeStamp;
+
 }

@@ -1,5 +1,7 @@
 package org.example.ubersocketservice.controller;
 
+import org.example.ubersocketservice.dto.ChatRequest;
+import org.example.ubersocketservice.dto.ChatResponse;
 import org.example.ubersocketservice.dto.TestRequest;
 import org.example.ubersocketservice.dto.TestResponse;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
@@ -12,10 +14,10 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class TestController {
 
-    private final SimpMessagingTemplate template;
+    private final SimpMessagingTemplate simpMessagingTemplate;
 
-    public TestController(SimpMessagingTemplate template) {
-        this.template = template;
+    public TestController(SimpMessagingTemplate simpMessagingTemplate) {
+        this.simpMessagingTemplate = simpMessagingTemplate;
     }
 
     @MessageMapping("/ping")
@@ -52,7 +54,7 @@ public class TestController {
                 .timeStamp(" "+System.currentTimeMillis())
                 .build();
 
-        template.convertAndSendToUser(userId, "/queue/privateChat/"+ room , response);
+        simpMessagingTemplate.convertAndSendToUser(userId, "/queue/privateChat/"+ room , response);
     }
 
 }
