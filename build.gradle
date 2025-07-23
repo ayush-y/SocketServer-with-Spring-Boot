@@ -15,6 +15,7 @@ java {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -25,6 +26,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.3.0")
+    implementation 'org.example:UberProject-EntityService:0.0.6-SNAPSHOT'
 
 }
 

@@ -3,7 +3,7 @@ spring:
     name: UberSocketService
 
 server:
-  port: 8080
+  port: 3002
 
 eureka:
   client:
